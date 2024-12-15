@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package exchanger;
+
+option go_package = "studentgit.kata.academy/gk/exchanger";
+
+service Exhanger{
+  rpc GetRates(CryptoRequest) returns (ValueResponce);
+}
+
+
+message CryptoRequest{
+  string request = 1;
+}
+
+message ValueResponce{
+  double bids = 1;
+  double asks = 2;
+  int64 current_time = 3;
+}
